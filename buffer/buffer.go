@@ -398,7 +398,7 @@ func (b *bufferWriter) WriteHeader(code int) {
 	b.code = code
 }
 
-// CloseNotifier interface - this allows downstream connections to be terminated when the client terminates.
+// CloseNotify interface - this allows downstream connections to be terminated when the client terminates.
 func (b *bufferWriter) CloseNotify() <-chan bool {
 	if cn, ok := b.responseWriter.(http.CloseNotifier); ok {
 		return cn.CloseNotify()
